@@ -24,8 +24,9 @@ public class SimpleTeleop extends LinearOpMode {
     DcMotor motorBackRight = hardwareMap.dcMotor.get("motorBackRight");
 
 
-    DcMotor motorLeftLift = hardwareMap.get("motorLeftLift");
-    DcMotor motorRightLift = hardwareMap.get("motorRightLift");
+
+    DcMotor motorLeftLift = hardwareMap.dcMotor.get("motorLeftLift");
+    DcMotor motorRightLift = hardwareMap.dcMotor.get("motorRightLift");
 
     motorLeftLift.setDirection(DcMotor.Direction.REVERSE);
 
@@ -69,6 +70,7 @@ public class SimpleTeleop extends LinearOpMode {
         motorBackLeft.setPower(backLeftPower);
         motorFrontRight.setPower(frontRightPower);
         motorBackRight.setPower(backRightPower);
+
         //controls ArmTarget
         if (gamepad2.left_bumper) {
             ArmTarget = 70; //intaking
@@ -80,6 +82,10 @@ public class SimpleTeleop extends LinearOpMode {
             ArmTarget = 1780; //Mid level
         } else if (gamepad2.right_bumper) {
             ArmTarget = 2550; //High level
+
+
+
+
         }
     }
 
